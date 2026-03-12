@@ -1,130 +1,115 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Shrine Enterprises</title>
-<link rel="stylesheet" href="style.css">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shrine Enterprises</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
 <body>
+    <header>
+        <div class="navbar">
+            <div class="logo">SHRINE ENTERPRISES</div>
+            <nav>
+                <a href="#home">HOME</a>
+                <a href="#services">SERVICES</a>
+                <a href="#about">ABOUT</a>
+                <a href="#contact">CONTACT</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-<div class="navbar">
+    <!-- HOME -->
+    <section id="home" class="hero">
+        <h1>SHRINE ENTERPRISES</h1>
+        <p>Your trusted partner in wellness, entertainment, plumbing & technology</p>
+        <a href="#services" class="main-btn">Explore Our Services</a>
+    </section>
 
-<h2 class="logo">SHRINE ENTERPRISES</h2>
+    <!-- ABOUT -->
+    <section id="about" class="about">
+        <h2>About Shrine Enterprises</h2>
+        <p>
+            Shrine Enterprises is a multi-service company based in South Africa.
+            We offer professional services in wellness coaching, entertainment,
+            plumbing solutions and IT services. Our goal is to provide reliable, 
+            high-quality services that support individuals, families and businesses.
+        </p>
+    </section>
 
-<nav>
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#services">Services</a>
-<a href="#contact">Contact</a>
-</nav>
+    <!-- SERVICES -->
+    <section id="services" class="services">
+        <h2>Our Services</h2>
+        <p>A diverse range of professional services under one trusted name</p>
+        
+        <div class="service-grid">
+            <div class="card">
+                <h3>SHRINE WELLNESS</h3>
+                <div class="subtitle">HEALTH & WELLNESS COACHING</div>
+                <p>with Nervani Sahadeo</p>
+                <p>Building your inner self through holistic health and wellness coaching. Transform your mind, body, and spirit with personalised guidance.</p>
+                <a href="wellness.html">Learn More</a>
+            </div>
 
-</div>
-</header>
+            <div class="card">
+                <h3>CHUNE WITH SONE</h3>
+                <div class="subtitle">MC & ENTERTAINMENT SERVICES</div>
+                <p>with Sonehri</p>
+                <p>Bringing the energy, vibes, and unforgettable moments to your events. Professional MC services for weddings, parties, and corporate functions.</p>
+                <a href="sone.html">Learn More</a>
+            </div>
 
+            <div class="card">
+                <h3>SHRINE PLUMBING</h3>
+                <div class="subtitle">PLUMBING SERVICES</div>
+                <p>Reliable, efficient, and professional plumbing services for residential and commercial properties. From repairs to full installations.</p>
+                <a href="plumbing.html">Learn More</a>
+            </div>
 
-<!-- HOME -->
+            <div class="card">
+                <h3>SHRINE IT SOLUTIONS</h3>
+                <div class="subtitle">IT SERVICES & WEBSITE BUILDING</div>
+                <p>with Netania Chetty</p>
+                <p>Modern IT solutions and stunning website design to take your business to the next level. From concept to launch, we build your digital presence.</p>
+                <a href="it.html">Learn More</a>
+            </div>
+        </div>
+    </section>
 
-<section id="home" class="hero">
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+        <h2>Contact Us Today</h2>
+        
+        <div class="contact-info">
+            <p>✉️ info@shrineenterprises.co.za</p>
+            <p>📍 South Africa</p>
+        </div>
 
-<h1>SHRINE ENTERPRISES</h1>
+        <h3>Send Us A Message</h3>
+        
+        <form>
+            <div class="form-row">
+                <input type="text" placeholder="Name *" required>
+                <input type="email" placeholder="Email *" required>
+            </div>
+            
+            <input type="tel" placeholder="Phone">
+            
+            <select>
+                <option>Select a service</option>
+                <option>Shrine Wellness</option>
+                <option>Chune With Sone</option>
+                <option>Shrine Plumbing</option>
+                <option>Shrine IT Solutions</option>
+            </select>
+            
+            <textarea placeholder="Message *" rows="5" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
 
-<p>Your trusted partner in wellness, entertainment, plumbing & technology</p>
-
-<a href="#services" class="main-btn">Explore Our Services</a>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about" class="about">
-
-<h2>About Shrine Enterprises</h2>
-
-<p>
-Shrine Enterprises is a multi-service company based in South Africa.
-We offer professional services in wellness coaching, entertainment,
-plumbing solutions and IT services.
-Our goal is to provide reliable, high-quality services that support
-individuals, families and businesses.
-</p>
-
-</section>
-
-
-<!-- SERVICES -->
-
-<section id="services" class="services">
-
-<h2>Our Services</h2>
-
-<div class="service-grid">
-
-<div class="card">
-<h3>Shrine Wellness</h3>
-<p>Holistic health and wellness coaching to help you transform your mind, body and spirit.</p>
-<a href="wellness.html">Learn More</a>
-</div>
-
-<div class="card">
-<h3>Chune With Sone</h3>
-<p>Professional MC and entertainment services for weddings, parties and events.</p>
-<a href="chune.html">Learn More</a>
-</div>
-
-<div class="card">
-<h3>Shrine Plumbing</h3>
-<p>Reliable residential and commercial plumbing services.</p>
-<a href="plumbing.html">Learn More</a>
-</div>
-
-<div class="card">
-<h3>Shrine IT Services</h3>
-<p>Website development, IT support and digital solutions.</p>
-<a href="it.html">Learn More</a>
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact" class="contact">
-
-<h2>Contact Us</h2>
-
-<form>
-
-<input type="text" placeholder="Your Name" required>
-
-<input type="email" placeholder="Your Email" required>
-
-<select>
-<option>Select Service</option>
-<option>Shrine Wellness</option>
-<option>Chune With Sone</option>
-<option>Shrine Plumbing</option>
-<option>Shrine IT Services</option>
-</select>
-
-<textarea placeholder="Your Message"></textarea>
-
-<button type="submit">Send Message</button>
-
-</form>
-
-</section>
-
-
-<footer>
-
-<p>© 2026 Shrine Enterprises</p>
-
-</footer>
-
+    <footer>
+        <p>© 2026 Shrine Enterprises. All rights reserved.</p>
+    </footer>
 </body>
 </html>
