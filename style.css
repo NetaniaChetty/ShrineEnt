@@ -5,7 +5,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background: #0e2c4d;
     color: white;
     line-height: 1.6;
@@ -16,6 +16,7 @@ header {
     background: white;
     padding: 15px 40px;
     border-bottom: 3px solid #f2b233;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .navbar {
@@ -26,24 +27,25 @@ header {
     margin: 0 auto;
 }
 
-/* Make header logo bigger and transparent */
+/* Bigger logo in header */
 .navbar .logo {
     background: transparent;
     padding: 5px 0;
 }
 
 .navbar .logo img {
-    height: 70px; /* Bigger logo */
+    height: 80px; /* Even bigger logo */
     width: auto;
     display: block;
 }
 
 nav a {
-    margin-left: 30px;
+    margin-left: 35px;
     text-decoration: none;
     color: #333;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 16px;
+    letter-spacing: 0.5px;
     transition: color 0.3s;
 }
 
@@ -55,37 +57,41 @@ nav a:hover {
 .hero {
     text-align: center;
     padding: 100px 20px;
-    background: linear-gradient(135deg, #0e2c4d 0%, #1a3f66 100%);
+    background: linear-gradient(135deg, #0e2c4d 0%, #1a4a7a 100%);
 }
 
 .hero h1 {
     font-size: 72px;
     margin-bottom: 20px;
     letter-spacing: 2px;
+    font-weight: 600;
 }
 
 .hero p {
     font-size: 20px;
     margin-bottom: 30px;
-    opacity: 0.9;
+    opacity: 0.95;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
 .main-btn {
     background: #f2b233;
-    padding: 15px 40px;
+    padding: 15px 45px;
     border-radius: 50px;
     text-decoration: none;
     color: #0e2c4d;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 18px;
     display: inline-block;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s;
     border: 2px solid transparent;
+    letter-spacing: 0.5px;
 }
 
 .main-btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(242, 178, 51, 0.3);
+    box-shadow: 0 10px 25px rgba(242, 178, 51, 0.3);
     border-color: white;
 }
 
@@ -102,6 +108,7 @@ nav a:hover {
     margin-bottom: 30px;
     position: relative;
     display: inline-block;
+    font-weight: 500;
 }
 
 .about h2:after {
@@ -119,11 +126,12 @@ nav a:hover {
     font-size: 18px;
     line-height: 1.8;
     opacity: 0.9;
+    font-weight: 300;
 }
 
 /* Services Section */
 .services {
-    background: white;
+    background: #f5f7fa;
     color: #333;
     padding: 80px 20px;
     text-align: center;
@@ -135,6 +143,7 @@ nav a:hover {
     color: #0e2c4d;
     position: relative;
     display: inline-block;
+    font-weight: 500;
 }
 
 .services h2:after {
@@ -152,40 +161,40 @@ nav a:hover {
     font-size: 18px;
     margin-bottom: 50px;
     color: #666;
+    font-weight: 300;
 }
 
-/* Service cards styling to match screenshot */
+/* Service cards styling - exactly like your screenshot */
 .service-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
+    gap: 30px;
     max-width: 1200px;
-    margin: 40px auto;
+    margin: 0 auto;
     padding: 0 20px;
 }
 
 .card {
     background: white;
     border-radius: 12px;
-    padding: 30px 25px;
+    padding: 35px 30px;
     text-align: left;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-    transition: transform 0.3s;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
-    border: 1px solid #eaeef2;
+    border: 1px solid #eef2f6;
 }
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(242, 178, 51, 0.15);
+    box-shadow: 0 15px 35px rgba(14, 44, 77, 0.1);
 }
 
 .card-logo {
-    width: 80px;
-    height: 80px;
+    width: 70px;
+    height: 70px;
     margin-bottom: 20px;
-    background: transparent;
     display: flex;
     align-items: center;
     justify-content: flex-start;
@@ -203,15 +212,16 @@ nav a:hover {
     color: #0e2c4d;
     font-size: 24px;
     margin-bottom: 5px;
-    font-weight: 700;
+    font-weight: 600;
     line-height: 1.2;
+    letter-spacing: 0.5px;
 }
 
 .card .subtitle {
     color: #f2b233;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
 }
@@ -219,7 +229,7 @@ nav a:hover {
 .card .with-name {
     color: #0e2c4d;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 400;
     margin-bottom: 15px;
     font-style: italic;
 }
@@ -227,9 +237,10 @@ nav a:hover {
 .card p {
     color: #4a5568;
     font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 20px;
+    line-height: 1.7;
+    margin-bottom: 25px;
     flex-grow: 1;
+    font-weight: 400;
 }
 
 .card .learn-more {
@@ -239,11 +250,12 @@ nav a:hover {
     color: white;
     text-decoration: none;
     border-radius: 6px;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 14px;
     align-self: flex-start;
     transition: all 0.3s;
-    border: 2px solid transparent;
+    letter-spacing: 0.5px;
+    border: 1px solid transparent;
 }
 
 .card .learn-more:hover {
@@ -264,6 +276,7 @@ nav a:hover {
     margin-bottom: 30px;
     position: relative;
     display: inline-block;
+    font-weight: 500;
 }
 
 .contact h2:after {
@@ -284,6 +297,7 @@ nav a:hover {
 .contact-info p {
     font-size: 18px;
     margin: 10px 0;
+    font-weight: 300;
 }
 
 .contact-info i {
@@ -313,10 +327,12 @@ input, select, textarea {
     background: rgba(255, 255, 255, 0.1);
     color: white;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: 'Segoe UI', Roboto, sans-serif;
 }
 
 input::placeholder, textarea::placeholder {
     color: rgba(255, 255, 255, 0.6);
+    font-weight: 300;
 }
 
 input:focus, select:focus, textarea:focus {
@@ -335,11 +351,13 @@ button {
     background: #f2b233;
     border: none;
     border-radius: 8px;
-    font-weight: bold;
+    font-weight: 600;
     font-size: 18px;
     color: #0e2c4d;
     cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
+    transition: all 0.3s;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: 0.5px;
 }
 
 button:hover {
@@ -354,23 +372,7 @@ footer {
     padding: 30px;
     font-size: 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Back button for service pages */
-.back-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: #f2b233;
-    color: #0e2c4d;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin: 20px;
-    transition: background 0.3s;
-}
-
-.back-btn:hover {
-    background: white;
+    font-weight: 300;
 }
 
 /* Responsive Design */
@@ -381,7 +383,7 @@ footer {
     }
     
     nav a {
-        margin: 0 10px;
+        margin: 0 12px;
     }
     
     .hero h1 {
@@ -402,6 +404,6 @@ footer {
     }
     
     .navbar .logo img {
-        height: 50px;
+        height: 60px;
     }
 }
