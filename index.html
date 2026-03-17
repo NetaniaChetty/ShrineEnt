@@ -2,16 +2,416 @@
 <html lang="en">
 <head>
     <title>Shrine Enterprises</title>
-    <link rel="stylesheet" href="/ShrineEnt/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.5;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            padding: 15px 40px;
+            border-bottom: 3px solid #f2b233;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo img {
+            height: 80px;
+            width: auto;
+            display: block;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 500;
+            font-size: 16px;
+            letter-spacing: 0.3px;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #f2b233;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #0e2c4d 0%, #1a4a7a 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            margin-bottom: 15px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            font-weight: 300;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .main-btn {
+            display: inline-block;
+            padding: 15px 45px;
+            background: #f2b233;
+            color: #0e2c4d;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .hero .main-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(242, 178, 51, 0.3);
+            border-color: white;
+        }
+
+        /* About Section */
+        .about {
+            padding: 80px 20px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: #1e293b;
+            position: relative;
+            display: inline-block;
+        }
+
+        .about h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #f2b233;
+        }
+
+        .about p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #475569;
+        }
+
+        /* Services Section */
+        .services {
+            background: #f8fafc;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .services h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            color: #1e293b;
+            position: relative;
+            display: inline-block;
+        }
+
+        .services h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #f2b233;
+        }
+
+        .services > p {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 50px;
+        }
+
+        /* 2-column grid - exactly as requested */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            padding: 40px 30px;
+            text-align: left;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: #1e293b;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .service-card .subtitle {
+            color: #f2b233;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        .service-card .with-name {
+            color: #64748b;
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            color: #475569;
+            font-size: 15px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .service-card .learn-more {
+            display: inline-block;
+            padding: 10px 25px;
+            background: #0e2c4d;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .service-card .learn-more:hover {
+            background: #f2b233;
+            color: #0e2c4d;
+            border-color: #0e2c4d;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #0e2c4d;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            position: relative;
+            display: inline-block;
+        }
+
+        .contact h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #f2b233;
+        }
+
+        .contact-info {
+            margin-bottom: 40px;
+        }
+
+        .contact-info p {
+            font-size: 18px;
+            margin: 10px 0;
+            opacity: 0.9;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: rgba(255,255,255,0.05);
+            padding: 40px;
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .contact-form input,
+        .contact-form select,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+            background: rgba(255,255,255,0.1);
+            color: white;
+            font-size: 16px;
+            font-family: inherit;
+        }
+
+        .contact-form input::placeholder,
+        .contact-form textarea::placeholder {
+            color: rgba(255,255,255,0.6);
+        }
+
+        .contact-form input:focus,
+        .contact-form select:focus,
+        .contact-form textarea:focus {
+            outline: none;
+            border-color: #f2b233;
+            background: rgba(255,255,255,0.15);
+        }
+
+        .contact-form select option {
+            background: #0e2c4d;
+            color: white;
+        }
+
+        .contact-form button {
+            padding: 16px;
+            background: #f2b233;
+            color: #0e2c4d;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: #ffc44d;
+            transform: translateY(-2px);
+        }
+
+        .success-message {
+            background: rgba(46, 204, 113, 0.2);
+            border: 1px solid #2ecc71;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            color: white;
+        }
+
+        /* Footer */
+        .footer {
+            background: #0f172a;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                gap: 20px;
+            }
+            
+            .hero h1 {
+                font-size: 42px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo img {
+                height: 60px;
+            }
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+    </style>
 </head>
 <body>
-    <header>
-        <div class="navbar">
+    <!-- Header -->
+    <header class="header">
+        <div class="nav-container">
             <div class="logo">
-                <img src="/ShrineEnt/shrine.jpeg" alt="SHRINE ENTERPRISES">
+                <img src="https://taniac1208.github.io/ShrineEnt/shrine.jpeg" alt="SHRINE ENTERPRISES">
             </div>
-            <nav>
+            <nav class="nav-links">
                 <a href="#home">HOME</a>
                 <a href="#services">SERVICES</a>
                 <a href="#about">ABOUT</a>
@@ -30,65 +430,48 @@
     <!-- ABOUT -->
     <section id="about" class="about">
         <h2>About Shrine Enterprises</h2>
-        <p>
-            Shrine Enterprises is a multi-service company based in South Africa.
-            We offer professional services in wellness coaching, entertainment,
-            plumbing solutions and IT services. Our goal is to provide reliable, 
-            high-quality services that support individuals, families and businesses.
-        </p>
+        <p>Shrine Enterprises is a multi-service company based in South Africa. We offer professional services in wellness coaching, entertainment, plumbing solutions and IT services. Our goal is to provide reliable, high-quality services that support individuals, families and businesses.</p>
     </section>
 
     <!-- SERVICES -->
     <section id="services" class="services">
         <h2>Our Services</h2>
         <p>A diverse range of professional services under one trusted name</p>
-        
-        <div class="service-grid">
+
+        <div class="services-grid">
             <!-- SHRINE WELLNESS -->
-            <div class="card">
-                <div class="card-logo">
-                    <img src="/ShrineEnt/wellness.png" alt="Shrine Wellness">
-                </div>
+            <div class="service-card">
                 <h3>SHRINE WELLNESS</h3>
                 <div class="subtitle">HEALTH & WELLNESS COACHING</div>
                 <div class="with-name">with Nervani Sahadeo</div>
                 <p>Building your inner self through holistic health and wellness coaching. Transform your mind, body, and spirit with personalised guidance.</p>
-                <a href="wellness.html" class="learn-more">Learn More</a>
+                <a href="wellness.html" class="learn-more">Learn More →</a>
             </div>
 
             <!-- CHUNE WITH SONE -->
-            <div class="card">
-                <div class="card-logo">
-                    <img src="/ShrineEnt/sone.jpeg" alt="Chune With Sone">
-                </div>
+            <div class="service-card">
                 <h3>CHUNE WITH SONE</h3>
                 <div class="subtitle">MC & ENTERTAINMENT SERVICES</div>
                 <div class="with-name">with Sonehri</div>
                 <p>Bringing the energy, vibes, and unforgettable moments to your events. Professional MC services for weddings, parties, and corporate functions.</p>
-                <a href="sone.html" class="learn-more">Learn More</a>
+                <a href="sone.html" class="learn-more">Learn More →</a>
             </div>
 
             <!-- SHRINE PLUMBING -->
-            <div class="card">
-                <div class="card-logo">
-                    <div style="width:70px;height:70px;background:#0e2c4d;color:#f2b233;display:flex;align-items:center;justify-content:center;font-weight:bold;border-radius:8px; font-size:16px;">PLUMB</div>
-                </div>
+            <div class="service-card">
                 <h3>SHRINE PLUMBING</h3>
                 <div class="subtitle">PLUMBING SERVICES</div>
                 <p>Reliable, efficient, and professional plumbing services for residential and commercial properties. From repairs to full installations.</p>
-                <a href="plumbing.html" class="learn-more">Learn More</a>
+                <a href="plumbing.html" class="learn-more">Learn More →</a>
             </div>
 
             <!-- SHRINE IT SOLUTIONS -->
-            <div class="card">
-                <div class="card-logo">
-                    <div style="width:70px;height:70px;background:#0e2c4d;color:#f2b233;display:flex;align-items:center;justify-content:center;font-weight:bold;border-radius:8px; font-size:16px;">IT</div>
-                </div>
+            <div class="service-card">
                 <h3>SHRINE IT SOLUTIONS</h3>
                 <div class="subtitle">IT SERVICES & WEBSITE BUILDING</div>
                 <div class="with-name">with Netania Chetty</div>
                 <p>Modern IT solutions and stunning website design to take your business to the next level. From concept to launch, we build your digital presence.</p>
-                <a href="IT.html" class="learn-more">Learn More</a>
+                <a href="IT.html" class="learn-more">Learn More →</a>
             </div>
         </div>
     </section>
@@ -102,31 +485,41 @@
             <p>📍 South Africa</p>
         </div>
 
-        <h3>Send Us A Message</h3>
-        
-        <form>
-            <div class="form-row">
-                <input type="text" placeholder="Name *" required>
-                <input type="email" placeholder="Email *" required>
-            </div>
+        <div class="contact-container">
+            <h3 style="margin-bottom: 30px; font-size: 24px; font-weight: 600;">Send Us A Message</h3>
             
-            <input type="tel" placeholder="Phone">
+            <form class="contact-form" action="https://formsubmit.co/info@shrineenterprises.co.za" method="POST">
+                <!-- FormSubmit configuration -->
+                <input type="hidden" name="_subject" value="New enquiry from Shrine Enterprises website">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_next" value="https://taniac1208.github.io/ShrineEnt/#contact">
+                
+                <div class="form-row">
+                    <input type="text" name="name" placeholder="Name *" required>
+                    <input type="email" name="email" placeholder="Email *" required>
+                </div>
+                
+                <input type="tel" name="phone" placeholder="Phone">
+                
+                <select name="service">
+                    <option value="">Select a service</option>
+                    <option value="Shrine Wellness">Shrine Wellness</option>
+                    <option value="Chune With Sone">Chune With Sone</option>
+                    <option value="Shrine Plumbing">Shrine Plumbing</option>
+                    <option value="Shrine IT Solutions">Shrine IT Solutions</option>
+                </select>
+                
+                <textarea name="message" placeholder="Message *" rows="5" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
             
-            <select>
-                <option>Select a service</option>
-                <option>Shrine Wellness</option>
-                <option>Chune With Sone</option>
-                <option>Shrine Plumbing</option>
-                <option>Shrine IT Solutions</option>
-            </select>
-            
-            <textarea placeholder="Message *" rows="5" required></textarea>
-            
-            <button type="submit">Send Message</button>
-        </form>
+            <p style="margin-top: 20px; font-size: 14px; opacity: 0.7;">We'll get back to you within 24 hours</p>
+        </div>
     </section>
 
-    <footer>
+    <footer class="footer">
         <p>© 2026 Shrine Enterprises. All rights reserved.</p>
     </footer>
 </body>
