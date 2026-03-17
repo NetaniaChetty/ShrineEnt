@@ -60,7 +60,7 @@
             color: #f2b233;
         }
 
-        /* Hero Section */
+        /* Hero Section - Beautiful gradient */
         .hero-gradient {
             text-align: center;
             padding: 100px 20px;
@@ -131,6 +131,18 @@
             color: #1e293b;
             font-family: 'Playfair Display', serif;
             text-align: center;
+            position: relative;
+        }
+
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: #f2b233;
         }
 
         .section-subtitle {
@@ -201,6 +213,19 @@
             color: #64748b;
             font-size: 15px;
             line-height: 1.7;
+        }
+
+        /* Quote Box */
+        .quote-box {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 30px;
+            background: #f1f5f9;
+            border-left: 4px solid #f2b233;
+            font-style: italic;
+            color: #334155;
+            font-size: 18px;
+            border-radius: 0 12px 12px 0;
         }
 
         /* CTA Section */
@@ -340,7 +365,7 @@
         <h1>SHRINE WELLNESS</h1>
         <div class="subtitle">HEALTH & WELLNESS COACHING</div>
         <div class="with-name">with Nervani Sahadeo</div>
-        <p>Building your inner self through holistic health and wellness coaching</p>
+        <p>Building your inner self through holistic health and wellness coaching. Transform your mind, body, and spirit with personalised guidance.</p>
     </section>
 
     <!-- About Section -->
@@ -354,7 +379,7 @@
 
     <!-- Services Section -->
     <div class="container">
-        <h2 class="section-title">Wellness Programs</h2>
+        <h2 class="section-title">What We Offer</h2>
         <p class="section-subtitle">Holistic approaches to total wellbeing</p>
 
         <div class="cards-grid">
@@ -387,12 +412,10 @@
                 <h3>Motivational Sessions</h3>
                 <p>Inspiring sessions designed to unlock your potential and keep you motivated on your wellness journey.</p>
             </div>
+        </div>
 
-            <div class="card">
-                <div class="card-icon">🧘</div>
-                <h3>Mindfulness Training</h3>
-                <p>Develop presence and awareness through guided mindfulness practices and meditation techniques.</p>
-            </div>
+        <div class="quote-box">
+            Every wellness journey is unique. We tailor our programs to match your goals, lifestyle, and personal needs.
         </div>
     </div>
 
